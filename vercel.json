@@ -1,7 +1,7 @@
 {
   "version": 2,
   "functions": {
-    "vercel/main.go": {
+    "vercel/vercelMain.go": {
       "runtime": "go@1.24.0"
     }
   }
