@@ -8,7 +8,7 @@ import (
 )
 
 func RequestHandler(w http.ResponseWriter, r *http.Request) {
-	g := gin.Default()
-	routes.RegisterRoutes(g)
-	g.ServeHTTP(w, r)
+	router := gin.Default()
+	routes.RegisterRoutes(router)
+	router.ServeHTTP(w, r)
 }
