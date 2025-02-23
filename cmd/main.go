@@ -2,11 +2,11 @@ package main
 
 import (
 	"log"
-	"net/http"
 	"os"
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
+	"github.com/sujalsaini3304/go_server/routes"
 )
 
 func main() {
@@ -16,13 +16,7 @@ func main() {
 	}
 	server_port := os.Getenv("PORT")
 	r := gin.Default()
-	r.GET("/", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"Author":  "Sujal Kumar Saini",
-			"Message": "Go Server Started",
-			"Status":  "O.K.",
-		})
-	})
+	routes.RegisterRoutes(r)
 	r.Run(server_port)
-	
 }
+
